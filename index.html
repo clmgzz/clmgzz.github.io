@@ -1,7 +1,47 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <h1>안녕하세요, 제 홈페이지입니다.</h1>
-  <p>Github Pages로 만들었습니다.</p>
-</body>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="김동언 · 서울대학교 첨단융합학부" />
+    <title>김동언 | Personal Page</title>
+    <style>
+      :root { color-scheme: dark; --ink: #eef4ff; --muted: #abb9cf; --accent: #72e4c3; --line: rgba(238,244,255,.18); --surface: rgba(255,255,255,.06); }
+      * { box-sizing: border-box; }
+      html { background: #0b1425; }
+      body { min-height: 100vh; margin: 0; display: grid; place-items: center; overflow-x: hidden; color: var(--ink); background: radial-gradient(circle at 12% 12%, rgba(50,102,178,.38), transparent 34rem), radial-gradient(circle at 88% 88%, rgba(45,154,124,.22), transparent 30rem), #0b1425; font-family: Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
+      main { width: min(100% - 2.5rem, 64rem); padding: 3.5rem 0; }
+      .eyebrow { display: flex; align-items: center; gap: .65rem; margin: 0 0 1.5rem; color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+      .eyebrow::before { width: 2rem; height: 1px; content: ""; background: currentColor; }
+      h1 { max-width: 12ch; margin: 0; font-size: clamp(3.2rem, 10vw, 7.5rem); letter-spacing: -.075em; line-height: .95; }
+      .intro { max-width: 36rem; margin: 1.75rem 0 3.5rem; color: var(--muted); font-size: clamp(1.05rem, 2.5vw, 1.25rem); line-height: 1.75; word-break: keep-all; }
+      .profile { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+      .item { min-height: 10.5rem; padding: 1.6rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
+      .label { display: block; margin-bottom: 1.25rem; color: var(--accent); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+      .value { margin: 0; font-size: clamp(1.1rem, 3vw, 1.45rem); font-weight: 650; line-height: 1.45; word-break: keep-all; }
+      .note { margin: .7rem 0 0; color: var(--muted); font-size: .93rem; line-height: 1.6; word-break: keep-all; }
+      footer { margin-top: 1.5rem; color: var(--muted); font-size: .8rem; }
+      @media (max-width: 38rem) { main { width: min(100% - 2rem, 64rem); padding: 2.5rem 0; } .intro { margin-bottom: 2.5rem; } .profile { grid-template-columns: 1fr; } .item { min-height: auto; padding: 1.4rem; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Personal Page</p>
+      <h1>김동언</h1>
+      <p class="intro">서울대학교 첨단융합학부에서 배우며, 새로운 기술이 사람들의 삶에 자연스럽게 닿는 방법을 고민합니다.</p>
+      <section class="profile" aria-label="프로필">
+        <article class="item">
+          <span class="label">Affiliation</span>
+          <p class="value">서울대학교<br />첨단융합학부</p>
+        </article>
+        <article class="item">
+          <span class="label">AI Research</span>
+          <p class="value">연구 이력 업데이트 예정</p>
+          <p class="note">확인된 연구 경력을 알려주시면 이곳에 정확히 반영할 수 있습니다.</p>
+        </article>
+      </section>
+      <footer>© <span id="year"></span> Kim Dong-eon</footer>
+    </main>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
 </html>
